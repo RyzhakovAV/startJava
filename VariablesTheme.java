@@ -34,10 +34,21 @@ public class VariablesTheme {
         int pen = 100;
         int book = 200;
         int discount = 11;
+
         System.out.println("\nTask №2");
         System.out.println("Общая стоимость товаров без скидки: " + (pen + book));
+
         float discountSum = (pen + book) * (11 / 100.0F);
+
         System.out.println("Сумма скидки: " + discountSum);
         System.out.println("Общая стоимость товаров со скидкой: " + (pen + book - discountSum));
+        System.out.println("\n----------------------");
+
+        //Task 3 Вывод слова JAVA
+        System.out.println("\nTask №3");
+        System.out.println("   J     a  V     V  a");
+        System.out.println("   J    a a  V   V  a a");
+        System.out.println("J  J   aaaaa  V V  aaaaa");
+        System.out.println(" JJ   a     a  V  a     a");
     }
 }
