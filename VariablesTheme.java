@@ -28,5 +28,16 @@ public class VariablesTheme {
         System.out.println("Total memory GPU: " + totalMemoryGpu);
         System.out.println("Memory partion: " + partion);
         System.out.println("batery: " + batery + procent);
+        System.out.println("\n----------------------");
+
+        //Task 2 Расчет стоимости товара со скидкой
+        int pen = 100;
+        int book = 200;
+        int discount = 11;
+        System.out.println("\nTask №2");
+        System.out.println("Общая стоимость товаров без скидки: " + (pen + book));
+        float discountSum = (pen + book) * (11 / 100.0F);
+        System.out.println("Сумма скидки: " + discountSum);
+        System.out.println("Общая стоимость товаров со скидкой: " + (pen + book - discountSum));
     }
 }
