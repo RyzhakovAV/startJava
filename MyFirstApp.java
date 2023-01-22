@@ -1,5 +1,9 @@
 public class MyFirstApp {
     public static void main(String[] args) {
-        System.out.print("Hello World!");
+        short fishNumber = 3; // три рыбки
+        short beefNumber = 2; // два кусочка говядины
+        short breakfast = 0;
+        breakfast = (short) (fishNumber + beefNumber);
+        System.out.print(breakfast);
     }
 }
