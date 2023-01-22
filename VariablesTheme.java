@@ -28,6 +28,7 @@ public class VariablesTheme {
         System.out.println("Total memory GPU: " + totalMemoryGpu);
         System.out.println("Memory partion: " + partion);
         System.out.println("batery: " + batery + procent);
+
         System.out.println("\n----------------------");
 
         //Task 2 Расчет стоимости товара со скидкой
@@ -42,6 +43,7 @@ public class VariablesTheme {
 
         System.out.println("Сумма скидки: " + discountSum);
         System.out.println("Общая стоимость товаров со скидкой: " + (pen + book - discountSum));
+
         System.out.println("\n----------------------");
 
         //Task 3 Вывод слова JAVA
@@ -50,5 +52,31 @@ public class VariablesTheme {
         System.out.println("   J    a a  V   V  a a");
         System.out.println("J  J   aaaaa  V V  aaaaa");
         System.out.println(" JJ   a     a  V  a     a");
+
+        System.out.println("\n----------------------");
+
+        //Task 4 Вывод min и max значений целых числовых типов
+        byte maxByte = Byte.MAX_VALUE;
+        short maxShort = Short.MAX_VALUE;
+        int maxInt = Integer.MAX_VALUE;
+        long maxLong = Long.MAX_VALUE;
+
+        System.out.println("\nTask №4");
+        System.out.println("Max byte: " + maxByte);
+        System.out.println("Инкремент: " + maxByte++);
+        System.out.println("Декремент: " + maxByte--);
+        System.out.println("Max short: " + maxShort);
+        System.out.println("Инкремент: " + maxShort++);
+        System.out.println("Декремент: " + maxShort--);
+        System.out.println("Max int: " + maxInt);
+        System.out.println("Инкремент: " + maxInt++);
+        System.out.println("Декремент: " + maxInt--);
+        System.out.println("Max long: " + maxLong);
+        System.out.println("Инкремент: " + maxLong++);
+        System.out.println("Декремент: " + maxLong--);
+
+        System.out.println("\n----------------------");
+
+        //Task 5 Перестановка значений переменных
     }
 }
