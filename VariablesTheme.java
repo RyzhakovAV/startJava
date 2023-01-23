@@ -139,6 +139,16 @@ public class VariablesTheme {
 
         //Task 8 Вывод количества сотен, десятков и единиц числа
         System.out.println("\nTask №8");
-        
+        int startNumber = 123;
+        System.out.println("Число " + startNumber + " содержит: ");
+        int hundred = startNumber / 100;
+        System.out.println(hundred + " сотен");
+        int ten = (startNumber / 10 ) % 10;
+        System.out.println(ten + " десяток");
+        int digit = (startNumber % 100) % 10;
+        System.out.println(digit + " единиц");
+        System.out.println("Сумма его цифр = " + (hundred + ten + digit));
+        System.out.println("Произведение его цифр = " + (hundred * ten * digit));
+
     }
 }
