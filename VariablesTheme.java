@@ -8,7 +8,7 @@
 */
 public class VariablesTheme {
     public static void main(String[] args) {
-        //Task 1 объявите переменные всех существующих в Java примитивных типов данных, присвоив им значения
+        //Task 1 объявите переменные всех существующих в Java примитивных типов данных
         byte totalCore = 4;
         short frequency = 3300;
         int gpu = 1050;
@@ -101,5 +101,27 @@ public class VariablesTheme {
         digit2 ^= 7;
         System.out.println("Перестановка с помощью арифметических операций: Digit 1 = " + digit1 +
                 ", Digit 2 = " + digit2);
+
+        System.out.println("\n----------------------");
+
+        //Task 6 Вывод символов и их кодов
+        System.out.println("\nTask №6");
+        char code35 = '#';
+        char code38 = '&';
+        char code64 = '@';
+        char code94 = '^';
+        char code95 = '_';
+
+        System.out.println(code35 + " = " + (int) code35);
+        System.out.println(code38 + " = " + (int) code38);
+        System.out.println(code64 + " = " + (int) code64);
+        System.out.println(code94 + " = " + (int) code94);
+        System.out.println(code95 + " = " + (int) code95);
+
+        System.out.println("\n----------------------");
+
+        //Task 7 Вывод в консоль ASCII-арт Дюка
+        System.out.println("\nTask №7");
+        
     }
 }
