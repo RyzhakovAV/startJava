@@ -78,5 +78,28 @@ public class VariablesTheme {
         System.out.println("\n----------------------");
 
         //Task 5 Перестановка значений переменных
+        System.out.println("\nTask №5");
+        int digit1 = 2;
+        int digit2 = 5;
+        System.out.println("Digit 1 = " + digit1);
+        System.out.println("Digit 2 = " + digit2);
+        int timeDigit = digit1;
+        digit1 = digit2;
+        digit2 = timeDigit;
+        System.out.println("Перестановка с помощью третьей переменной: Digit 1 = " + digit1 +
+                ", Digit 2 = " + digit2);
+        digit1 = 2;
+        digit2 = 5;
+        digit1 = digit1 + digit2;
+        digit2 = digit1 - digit2;
+        digit1 = digit1 - digit2;
+        System.out.println("Перестановка с помощью арифметических операций: Digit 1 = " + digit1 +
+                ", Digit 2 = " + digit2);
+        digit1 = 2; // 010
+        digit2 = 5; // 101
+        digit1 ^= 7;
+        digit2 ^= 7;
+        System.out.println("Перестановка с помощью арифметических операций: Digit 1 = " + digit1 +
+                ", Digit 2 = " + digit2);
     }
 }
