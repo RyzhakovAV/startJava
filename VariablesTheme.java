@@ -150,5 +150,14 @@ public class VariablesTheme {
         System.out.println("Сумма его цифр = " + (hundred + ten + digit));
         System.out.println("Произведение его цифр = " + (hundred * ten * digit));
 
+        System.out.println("\n----------------------");
+
+        //Task 9 Вывод времени
+        System.out.println("\nTask №9");
+        int time = 86399;
+        int hour = time / 3600;
+        int minute = (time - hour * 3600) / 60;
+        int second = time - (hour * 3600) - (minute * 60);
+        System.out.println(hour + " : " + minute + " : " + second);
     }
 }
