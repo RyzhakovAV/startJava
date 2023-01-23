@@ -122,6 +122,23 @@ public class VariablesTheme {
 
         //Task 7 Вывод в консоль ASCII-арт Дюка
         System.out.println("\nTask №7");
+        char code47 = '/';
+        char code92 = '\\';
+        char code95t7 = '_';
+        char code40 = '(';
+        char code41 = ')';
+
+        System.out.println("    " + code47 + code92 + "    ");
+        System.out.println("   " + code47 + "  " + code92 + "   ");
+        System.out.println("  " + code47 + code95t7 + code40 + " " + code41 + code92 + "  ");
+        System.out.println(" " + code47 + "      " + code92 + " ");
+        System.out.println("" + code47 + code95t7 + code95t7 + code95t7 + code95t7 + code47 +
+                code92 + code95t7 + code95t7 + code92);
+
+        System.out.println("\n----------------------");
+
+        //Task 8 Вывод количества сотен, десятков и единиц числа
+        System.out.println("\nTask №8");
         
     }
 }
