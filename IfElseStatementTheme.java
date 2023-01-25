@@ -168,6 +168,76 @@ public class IfElseStatementTheme {
         
         // Task 8 Расчет прибыли за год
         System.out.println("Task 8");
+        int rent = 5_000;
+        int sale = 50_000;
+        int costPrice = 9_000;
+        int year = (sale * 12) - (costPrice * 12) - (rent * 12);
+        if(year > 0) {
+            System.out.println("Прибыль за год +" + year + " руб.");
+        }else{
+            System.out.println("Прибыль за год " + year + " руб.");
+        }
+
+        System.out.println("\n------------------\n");
+        
+        // Task 9 Подсчет количества банкнот
+        System.out.println("Task 9");
+        int sum = 567;
+        int sum100 = 10;
+        int sum10 = 5;
+        int sum1 = 50;
+
+        System.out.println("Номиналы банкнот в банкомате: \n100 - " + sum100 + " шт." 
+                + "\n10 - " + sum10 + " шт." 
+                + "\n1 - " + sum1 + " шт.");
+
+        int allMoney = sum100 * 100 + sum10 * 10 + sum1 * 1;
+
+        if(allMoney < sum) {
+            System.out.println("В банкомате нет необходимого количества денег");
+        }else{
+            int control = 0;
+            int firstSum = sum / 100;
+            if(firstSum > sum100) {
+                System.out.println("Выдано купюр номиналом 100: " + sum100);
+                sum -= sum100 * 100;
+                control += sum100 * 100;
+                sum100 = 0;
+            }else{
+                System.out.println("Выдано купюр номиналом 100: " + firstSum);
+                sum100 -= firstSum;
+                sum -= firstSum * 100;
+                control += firstSum * 100;
+            }
+            int secondSum = sum / 10;
+            if(secondSum > sum10) {
+                System.out.println("Выдано купюр номиналом 10: " + sum10);
+                sum -= sum10 * 10;
+                control += sum10 * 10;
+                sum10 = 0;
+            }else{
+                System.out.println("Выдано купюр номиналом 10: " + secondSum);
+                sum10 -= secondSum;
+                sum -= secondSum * 10;
+                control += secondSum * 10;
+            }
+            int lastSum = sum % 100;
+            if(lastSum > sum1) {
+                System.out.println("Выдано купюр номиналом 1: " + sum1);
+                sum -= sum1;
+                control += sum1;
+                sum1 = 0;
+            }else{
+                System.out.println("Выдано купюр номиналом 1: " + lastSum);
+                sum1 -= lastSum;
+                sum -= lastSum;
+                control += lastSum;
+            }
+            System.out.println("Всего выдано:" + control);
+            System.out.println("Номиналы банкнот в банкомате: \n100 - " + sum100 + " шт." 
+                    + "\n10 - " + sum10 + " шт." 
+                    + "\n1 - " + sum1 + " шт.");
+        }
     }
 }
 
