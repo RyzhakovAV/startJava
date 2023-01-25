@@ -112,9 +112,20 @@ public class IfElseStatementTheme {
 
         System.out.println("\n------------------\n");
         
-        // Task 6 Определение символа по его коду
+        // Task 6 Подсчет суммы вклада и начисленных банком %
         System.out.println("Task 6");
-        
+        int deposit = 300_000;
+        int procent = 0;
+        if(deposit < 100_000) {
+            procent = 5;
+        }else if(deposit >= 100_000 && deposit <= 300_000) {
+            procent = 7;
+        }else {
+            procent = 10;
+        }
+        System.out.println("Сумма вклада: " + deposit);
+        System.out.println("Начисленный % " + procent);
+        System.out.println("Итоговая сумма с % " + deposit * (1.0 + procent / 100.0));
     }
 }
 
