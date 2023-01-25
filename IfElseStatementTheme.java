@@ -126,6 +126,48 @@ public class IfElseStatementTheme {
         System.out.println("Сумма вклада: " + deposit);
         System.out.println("Начисленный % " + procent);
         System.out.println("Итоговая сумма с % " + deposit * (1.0 + procent / 100.0));
+
+        System.out.println("\n------------------\n");
+        
+        // Task 7 Подсчет суммы вклада и начисленных банком %
+        System.out.println("Task 7");
+        int history = 59;
+        int programmer = 91;
+        int historyPoint = 0;
+        int programmerPoint = 0;
+        if(history <= 60) {
+            historyPoint = 2;
+            System.out.println("История - 2");
+        }else if(history > 60 && history <= 73) {
+            historyPoint = 3;
+            System.out.println("История - 3");
+        }else if(history > 73 && history <= 91) {
+            historyPoint = 4;
+            System.out.println("История - 4");
+        } else {
+            historyPoint = 5;
+            System.out.println("История = 5");
+        }
+        if(programmer <= 60) {
+            programmerPoint = 2;
+            System.out.println("Программирование - 2");
+        }else if(programmer > 60 && programmer <= 73) {
+            programmerPoint = 3;
+            System.out.println("Программирование - 3");
+        }else if(programmer > 73 && programmer <= 91) {
+            programmerPoint = 4;
+            System.out.println("Программирование - 4");
+        } else {
+            programmerPoint = 5;
+            System.out.println("Программирование = 5");
+        }
+        System.out.println("Средняя оценка по предметам: " + (historyPoint + programmerPoint) / 2.0);
+        System.out.println("Средний % по предметам: " + (history + programmer) / 2.0);
+
+        System.out.println("\n------------------\n");
+        
+        // Task 8 Расчет прибыли за год
+        System.out.println("Task 8");
     }
 }
 
