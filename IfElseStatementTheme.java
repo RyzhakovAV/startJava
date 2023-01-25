@@ -51,9 +51,70 @@ public class IfElseStatementTheme {
         // Task 3 Проверка числа
         System.out.println("Task 3");
         int anythingNumber = -723;
-        if(anythingNumber == 0) {
+        if(anythingNumber != 0) {
+            if(anythingNumber % 2 == 0) {
+                System.out.println("Число четное");
+                if(anythingNumber < 0) {
+                    System.out.println("Число меньше 0");
+                }else {
+                    System.out.println("Число больше 0");
+                }
+            }else {
+                System.out.println("Число нечетное");
+                if(anythingNumber < 0) {
+                    System.out.println("Число меньше 0");
+                }else {
+                    System.out.println("Число больше 0");
+                }
+            }
+        }
 
-        }else if(anythingNumber)
+        System.out.println("\n------------------\n");
+        
+        // Task 4 Поиск одинаковых цифр в числах
+        System.out.println("Task 4");
+        firstNumber = 567;
+        secondNumber = 123;
+        int equalNumber = -1;
+        System.out.println("Первое число: " + firstNumber);
+        System.out.println("Второе число: " + secondNumber);
+        if((firstNumber / 100) == (secondNumber / 100)) {
+            System.out.println("Число " + firstNumber / 100 + " есть в двух числах в сотнях");
+            equalNumber++;
+        }
+        if(((firstNumber / 10) % 10) == ((secondNumber / 10) % 10)) {
+            System.out.println("Число " + (firstNumber / 10) % 10 + " есть в двух числах в десятках");
+            equalNumber++;
+        }
+        if((firstNumber % 10) == (secondNumber % 10)) {
+            System.out.println("Число " + firstNumber % 10 + " есть в двух числах в еденицах");
+            equalNumber++;
+        }
+        if (equalNumber < 0) {
+            System.out.println("Одинаковых чисел не найдно");
+        }
+
+        System.out.println("\n------------------\n");
+        
+        // Task 5 Определение символа по его коду
+        System.out.println("Task 5");
+        char simbol = '\u0057';
+        System.out.println("Заданный символ: " + simbol);
+        if(simbol >= 'a' && simbol <= 'z') {
+            System.out.println("Заданный символ - маленькая буква");
+        }else if(simbol >= 'A' && simbol <= 'Z') {
+            System.out.println("Заданный символ - большая буква");
+        }else if(simbol >= '0' && simbol <= '9') {
+            System.out.println("Заданный символ - число");
+        }else{
+            System.out.println("Заданный символ - не буква и не число");
+        }
+
+        System.out.println("\n------------------\n");
+        
+        // Task 6 Определение символа по его коду
+        System.out.println("Task 6");
+        
     }
 }
 
