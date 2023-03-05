@@ -65,5 +65,55 @@ public class CyclesTheme{
             newLine++;
         }
         System.out.println("\n-------------------------------\n");
+
+        System.out.println("Task 5 Проверка количества двоек на четность/нечетность");
+        int number = 3242592;
+        int dublicateNumber = number;
+        int countTwo = 0;
+        int digit2 = 0;
+        String odd2 = "нечетное";
+        
+        while(number !=0) {
+            digit2 = number % 10;
+            if(digit2 == 2) countTwo++;
+            number /= 10;
+        }
+
+        if(countTwo % 2 ==0) odd2 = "четное";
+
+        System.out.printf("Число %d содержит %d (%s) количество двоек",dublicateNumber, countTwo, odd2);
+        System.out.println("\n-------------------------------\n");
+
+        System.out.println("Task 6 Отображение фигур в консоли");
+
+        for(int i = 0; i < 5; i++) {
+            for(int j = 0; j < 10; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        System.out.println();
+
+        int triangle = 5;
+        int triangleLine = triangle;
+
+        while(triangle > 0) {
+            triangleLine = triangle;
+            while(triangleLine > 0) {
+                System.out.print("#");
+                triangleLine--;
+            }
+            triangle--;
+            System.out.println();
+        }
+
+        System.out.println();
+        int dollar = 0;
+        int dollarLine;
+        
+        do {
+            
+        }while();
+        System.out.println("\n-------------------------------\n");
     }
 }
