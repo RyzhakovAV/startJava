@@ -108,12 +108,18 @@ public class CyclesTheme{
         }
 
         System.out.println();
-        int dollar = 0;
+        int dollar = 2;
         int dollarLine;
         
         do {
-            
-        }while();
+            dollarLine = 3 - Math.abs(dollar);
+            do {
+                System.out.print("$");
+                dollarLine--;
+            } while (dollarLine != 0);
+            dollar--;
+            System.out.println();
+        } while(dollar >= -2);
         System.out.println("\n-------------------------------\n");
     }
 }
