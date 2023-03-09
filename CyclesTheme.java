@@ -121,5 +121,57 @@ public class CyclesTheme{
             System.out.println();
         } while(dollar >= -2);
         System.out.println("\n-------------------------------\n");
+
+        System.out.println("Task 7 Отображение ASCII-символов");
+        System.out.println("Dec\tChar");
+        char asc;
+        for(int i = 0; i <= 127; i++) {
+            asc = (char)i;
+            if(i < 48 && i % 2 != 0) {
+                System.out.printf("%d\t%c\n", i, asc);
+            } else if(i >= 97 && i < 123 && i % 2 ==0) {
+                System.out.printf("%d\t%c\n", i, asc);
+            }
+        }
+        System.out.println("\n-------------------------------\n");
+
+        System.out.println("Task 8 Проверка, является ли число палиндромом");
+        int digitPolindrom = 1234321;
+        int dublicatePolindrom = Math.abs(digitPolindrom);
+        int countPolindrom = 0;
+        int diff = 0;
+
+        while(digitPolindrom != 0) {
+            digitPolindrom /= 10;
+            countPolindrom++;
+        }
+
+        int[] arrayPolidrom = new int[countPolindrom];
+        
+        for(int i = countPolindrom - 1; i >= 0; i--) {
+            arrayPolidrom[i] = dublicatePolindrom % 10;
+            dublicatePolindrom /= 10;
+        }
+
+        for(int i = 0; i < countPolindrom / 2; i++) {
+            if(arrayPolidrom[i] != arrayPolidrom[countPolindrom - i - 1]) {
+                diff = 0;
+                break;
+            }else{
+                diff++;
+            }
+        }
+
+        if(diff != 0) {
+            System.out.println("Число является полиндромом");
+        }else{
+            System.out.println("Число не является полиндромом");
+        }
+
+        System.out.println("\n-------------------------------\n");
+
+        System.out.println("Task 9 Определение, является ли число счастливым");
+        
+        System.out.println("\n-------------------------------\n");
     }
 }
