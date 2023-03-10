@@ -1,3 +1,5 @@
+import java.util.Random; 
+
 public class CyclesTheme{
     public static void main(String[] args) {
         System.out.println("Task 1 Подсчет суммы четных и нечетных чисел do while");
@@ -171,7 +173,37 @@ public class CyclesTheme{
         System.out.println("\n-------------------------------\n");
 
         System.out.println("Task 9 Определение, является ли число счастливым");
+        Random random = new Random();
+        int numRandom = random.nextInt(000001, 999999);
+        int halfOne, halfTwo;
+        halfOne = numRandom / 1000;
+        halfTwo = numRandom % 1000;
+        int sumOne = 0, sumTwo = 0;
+
+        String s = String.format("%06d", numRandom);
         
+        do {
+            sumOne += halfOne % 10;
+            halfOne /= 10;
+        } while(halfOne != 0);
+
+        do {
+            sumTwo += halfTwo % 10;
+            halfTwo /= 10;
+        } while(halfTwo != 0);
+
+        System.out.println(s);
+        System.out.println("Сумма первой тройки равна " + sumOne);
+        System.out.println("Сумма второй тройки равна " + sumTwo);
+        if(sumOne == sumTwo) {
+            System.out.println("Билет счастливый");
+        }else {
+            System.out.println("Билет не счастливый");
+        }
+        System.out.println("\n-------------------------------\n");
+
+        System.out.println("Task 10 Вывод таблицы умножения Пифагора");
+
         System.out.println("\n-------------------------------\n");
     }
 }
