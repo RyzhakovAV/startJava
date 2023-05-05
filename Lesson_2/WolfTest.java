@@ -1,11 +1,23 @@
-Создайте класс WolfTest с методом main
-
-    в нем создайте объект типа Wolf
-    в этом же классе присвойте полям Wolf какие-то значения
-    получите эти значения из полей и отобразите в консоли
-    вызовите методы объекта
 public class WolfTest {
-	public static void main(String() args) {
+	public static void main(String[] args) {
+		Wolf wolf = new Wolf();
 		
+		wolf.gender = 'М';
+		wolf.nickname = "Волчара";
+		wolf.weight = 28.9f;
+		wolf.age = 3;
+		wolf.color = "Серый";
+		
+		System.out.println("Пол : " + wolf.gender);
+		System.out.println("Кличка : " + wolf.nickname);
+		System.out.println("Вес : " + wolf.weight);
+		System.out.println("Возраст : " + wolf.age);
+		System.out.println("Окрас : " + wolf.color);
+		
+		wolf.move();
+		wolf.run();
+		wolf.hunter();
+		wolf.sit();
+		wolf.howl();
 	}
 }
