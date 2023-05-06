@@ -15,46 +15,47 @@ public class Wolf {
 	}
 	
 	public void setNickname(String nickname) {
-		id++;
-		this.nickname = nickname.isEmpty() ? "No name " + id : nickname;
+		this.nickname = nickname.isEmpty() ? "No name " + id++ : nickname;
 	}
 	
 	public String getNickname() {
 		return nickname;
 	}
-	/*
-	public setGender(char gender) {
-		this.gender = gender;
+	
+	public void setWeight(float weight) {
+		if (weight < 0) {
+			System.out.println("Вес не может быть отрицательным");
+			this.weight = 0f;
+		}else{
+			this.weight = weight;
+		}
 	}
 	
-	public char getGender() {
-		return gender;
+	public float getWeight() {
+		return weight;
 	}
 	
-	public setGender(char gender) {
-		this.gender = gender;
+	public void setAge(int age) {
+		if(age < 0 || age > 8) {
+			System.out.println("Некорректный возраст");
+			this.age = 0;
+		}else{
+		this.age = age;
+		}
 	}
 	
-	public char getGender() {
-		return gender;
+	public int getAge() {
+		return age;
 	}
 	
-	public setGender(char gender) {
-		this.gender = gender;
+	public void setColor(String color) {
+		this.color = color.isEmpty() ? "По умолчанию" : color;
 	}
 	
-	public char getGender() {
-		return gender;
+	public String getColor() {
+		return color;
 	}
-	
-	public setGender(char gender) {
-		this.gender = gender;
-	}
-	
-	public char getGender() {
-		return gender;
-	}
-	*/
+
 	public void move() {
 		System.out.println("Идет");
 	}
