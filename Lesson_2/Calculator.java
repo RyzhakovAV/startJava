@@ -18,14 +18,14 @@ public class Calculator {
 		this.operation = operation;
 	}
 	
-	/*private double Convert(String numberA, String numberB) {
+	public void Convert() {
 		try {
-			this.numberA = Double.parseDouble(numberA);
-			this.numberB = Double.parseDouble(numberB);
+			this.numberA = Double.parseDouble(a);
+			this.numberB = Double.parseDouble(b);
 			if(Equals(this.numberA, this.numberB, operation) == -1) {
 				System.out.println("Ошибка ввода математической операции");
-			}else {
-				System.out.printf("%s %s %s = &.2f",a, operation, b, Equals(this.numberA, this.numberB, operation));
+			//}else {
+				//System.out.printf("%s %s %s = &.2f",a, operation, b, Equals(this.numberA, this.numberB, operation));
 			}
 		}catch(Exception e) {
 			System.out.println("Ошибка ввода числовых значений");
@@ -51,5 +51,5 @@ public class Calculator {
 				return -1;
 		}
 	}
-	*/
+	
 }
