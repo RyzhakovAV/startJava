@@ -1,23 +1,24 @@
 public class Jaeger {
+	private static int enemy;
+	private static int finalHit;
 		//Technical Information
 	private String name;
 	private String mark;
-	private String status;
 	private String origin;
+	private static boolean status = true;
 		//Jaeger Specifications
 	private float height;
-	private float weight;
+	private int weight;
 	private int speed;
 	private int strength;
 	private int armor;
 	
-	public void Jaeger() {
+	public Jaeger() {
 	}
 	
-	public void Jaeger(String name, String mark, float height, float weight, int speed, int strength, int armor) {
+	public Jaeger(String name, String mark, float height, int weight, int speed, int strength, int armor) {
 		this.name = name;
 		this.mark = mark;
-		status = "UNKNOW";
 		origin = "UNKNOW";
 		this.height = height;
 		this.weight = weight;
@@ -26,10 +27,9 @@ public class Jaeger {
 		this.armor = armor;
 	}
 	
-	public void Jaeger(String name, String mark, String status, String origin, float height, float weight, int speed, int strength, int armor) {
+	public Jaeger(String name, String mark, String origin, float height, int weight, int speed, int strength, int armor) {
 		this.name = name;
 		this.mark = mark;
-		this.status = status;
 		this.origin = origin;
 		this.height = height;
 		this.weight = weight;
@@ -54,11 +54,7 @@ public class Jaeger {
 		return mark;
 	}
 	
-	public void setStatus(String status) {
-		this.status = status;
-	}
-	
-	public String getStatus() {
+	public boolean getStatus() {
 		return status;
 	}
 	
@@ -78,11 +74,11 @@ public class Jaeger {
 		return height;
 	}
 	
-	public void setWeight(float weight) {
+	public void setWeight(int weight) {
 		this.weight = weight;
 	}
 	
-	public float getWeight() {
+	public int getWeight() {
 		return weight;
 	}
 	
@@ -108,5 +104,51 @@ public class Jaeger {
 	
 	public int getArmor() {
 		return armor;
+	}
+	
+	public String start() {
+		if(status) {
+			return "Робот активирован";
+		}else {
+			return "Робот уничтожен";
+		}
+	}
+	
+	public String go() {
+		if(status) {
+			return "Робот вышел на марширут";
+		}else {
+			return "Робот уничтожен";
+		}
+	}
+	
+	public String goHome() {
+		return "Робот завершил потрулирование и направлен в ангар";
+	}
+	
+	public void scanner() {
+		for(int i = 0; i <= 5; i++) {
+			if(status) {
+				System.out.println("Произвожу сканирование");
+				enemy = (int)(Math.random() * 2);
+				if(enemy == 1) {
+					System.out.println("Обнаружен враг!!!");
+					System.out.println("Вступаю в бой");
+					finalHit = (int)(Math.random() * 15);
+					if(finalHit > armor) {
+						status = false;
+						System.out.println("Робот потерпел поражение");
+					}else{
+						System.out.println("Враг повержен");
+					}
+				}else{
+					System.out.println("Враг не обнаружен");
+					if (i == 5) System.out.println(goHome());
+				}
+			}else{
+			System.out.println("Робот уничтожен");
+			break;
+			}
+		}
 	}
 }
