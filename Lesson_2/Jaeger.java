@@ -5,7 +5,7 @@ public class Jaeger {
 	private String name;
 	private String mark;
 	private String origin;
-	private static boolean status = true;
+	private boolean status = true;
 		//Jaeger Specifications
 	private float height;
 	private int weight;
