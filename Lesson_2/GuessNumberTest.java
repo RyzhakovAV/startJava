@@ -8,7 +8,7 @@ public class GuessNumberTest {
 		String question;
 		String playerNameOne;
 		String playerNameTwo;
-		int randomStep = (int)(Math.random() * 2 + 1);
+		int randomStep;
 		
 		
 		System.out.print("Введите имя игрока: ");
@@ -16,18 +16,24 @@ public class GuessNumberTest {
 		System.out.print("Введите имя второго игрока: ");
 		playerNameTwo = console.next();
 		
+		if(playerNameOne.equals(playerNameTwo)) {
+			playerNameOne = playerNameOne + " 1";
+			playerNameTwo = playerNameTwo + " 2";
+		}
+		
 		Player playerOne = new Player(playerNameOne);
 		Player playerTwo = new Player(playerNameTwo);
+			
 		
 		while(yes) {
 			GuessNumber AI = new GuessNumber();
+			randomStep = (int)(Math.random() * 2 + 1);
 			System.out.println("Компьютер загадал число. Игра началась!");
 			if(randomStep == 1) {
-				System.out/println("Ход первого игрока");
+				AI.startGame(1, playerNameOne, playerNameTwo);
 			}else{
-				System.out.println("Ход второго игрока");
+				AI.startGame(2, playerNameOne, playerNameTwo);
 			}
-			System.out.println(AI.getNumber());
 			System.out.println("Хотите повторить игру? [yes/no]");
 			question = console.next();
 			yes = question.equals("no") || question.equals("n") ? false : true;
