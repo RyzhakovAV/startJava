@@ -8,4 +8,8 @@ public class GuessNumber {
 	public int getNumber() {
 		return number;
 	}
+	
+	public startGame() {
+		
+	}
 }
