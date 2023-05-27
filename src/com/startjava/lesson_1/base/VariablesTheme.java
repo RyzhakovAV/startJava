@@ -1,3 +1,4 @@
+package com.startjava.lesson_1.base;
 /* TODO:
 Создайте класс VariablesTheme с методом main
 Все задания реализуйте в нем, отделяя их друг от друга пустой строкой
