@@ -1,3 +1,5 @@
+package com.startjava.lesson_2_and_3.robot;
+
 public class Jaeger {
 	private static int enemy;
 	private static int finalHit;
