@@ -1,3 +1,5 @@
+package com.startjava.lesson_1.finals;
+
 import java.util.Scanner;
 
 public class MyFirstGame {
