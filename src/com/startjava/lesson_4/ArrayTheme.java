@@ -22,12 +22,38 @@ public class ArrayTheme {
         System.out.println(R > 1 ? "Произведение числе в массиве равно: " + R : " 1");
     }
 
+    public static void deleteElementsInArray() {
+        System.out.println("3. Удаление элементов массива");
+        double[] doubleArray = fillArrayDouble(15);
+        printArray(doubleArray);
+        double mid = doubleArray[doubleArray.length / 2];
+        System.out.println("\nЧисло в середине массива = " + mid);
+        int count = 0;
+        for(int i = 0; i < doubleArray.length; i++) {
+            if(i != doubleArray.length / 2) {
+                if((mid - doubleArray[i]) < 0.001) {
+                    doubleArray[i] = 0;
+                    count++;
+                }
+            }
+        }
+        printArray(doubleArray);
+        System.out.println("\nКоличество обнуленных ячеек = " + count);
+    }
+
     public static int[] fillArray(int size) {
         int[] array = new int[size];
-
         for(int i = 0; i < array.length; i++) {
             array[i] = i;
         }
+        return array;
+    }
+
+    public static double[] fillArrayDouble(int size) {
+        double[] array = new double[size];
+            for(int i = 0; i < array.length; i++) {
+                array[i] = Math.random();
+            }
         return array;
     }
 
@@ -55,10 +81,28 @@ public class ArrayTheme {
         System.out.print("] ");
     }
 
+    public static void printArray(double[] array) {
+        for(int i = 0; i < array.length; i++) {
+            if(i ==0 ) {
+                System.out.print("[");
+                System.out.printf("%.3f, ", array[i]);
+            }else if(i == array.length - 1) {
+                System.out.printf("%.3f", array[i]);
+            }else if(i == array.length / 2 + 1) {
+                System.out.printf("\n %.3f, ", array[i]);
+            }else{
+                System.out.printf("%.3f, ", array[i]);
+            }
+        }
+        System.out.print("] ");
+    }
+
     public static void main(String[] args) {
         int[] arrayNumbers = {1, 5, 3, 2, 6, 7, 4};
         reverseArray(arrayNumbers);
         System.out.println();
         multiArray();
+        System.out.println();
+        deleteElementsInArray();
     }
 }
