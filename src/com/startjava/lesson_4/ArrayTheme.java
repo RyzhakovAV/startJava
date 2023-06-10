@@ -41,6 +41,17 @@ public class ArrayTheme {
         System.out.println("\nКоличество обнуленных ячеек = " + count);
     }
 
+    public static void CharArray() {
+        System.out.println("4. Вывод элементов массива лесенкой в обратном порядке");
+        char[] arrayChar = new char[26];
+        char Z = 90;
+        for(int i = 0; i < arrayChar.length; i++) {
+            arrayChar[i] = Z;
+            Z--;
+        }
+        printArray(arrayChar);
+    }
+
     public static int[] fillArray(int size) {
         int[] array = new int[size];
         for(int i = 0; i < array.length; i++) {
@@ -97,6 +108,15 @@ public class ArrayTheme {
         System.out.print("] ");
     }
 
+    public static void printArray(char[] array) {
+        for(int i = 0; i < array.length; i++) {
+            for(int j = 0; j <= i; j++) {
+                System.out.print(array[j]);
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         int[] arrayNumbers = {1, 5, 3, 2, 6, 7, 4};
         reverseArray(arrayNumbers);
@@ -104,5 +124,8 @@ public class ArrayTheme {
         multiArray();
         System.out.println();
         deleteElementsInArray();
+        System.out.println();
+        CharArray();
+
     }
 }
