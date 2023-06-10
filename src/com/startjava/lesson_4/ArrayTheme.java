@@ -1,5 +1,7 @@
 package com.startjava.lesson_4;
 
+import java.util.Random;
+
 public class ArrayTheme {
     public static void reverseArray(int[] array) {
         System.out.println("1. Реверс значений массива");
@@ -52,6 +54,17 @@ public class ArrayTheme {
         printArray(arrayChar);
     }
 
+    public static void generateRandomNumbers(int start, int finish) {
+        System.out.println("5. Генерация уникальных чисел");
+        int size = finish - start;
+        int[] arrayRandomNumbers = new int[size];
+        for(int i = 0; i < arrayRandomNumbers.length; i++) {
+            arrayRandomNumbers[i] = start++;
+        }
+        mixArray(arrayRandomNumbers);
+        printArray(arrayRandomNumbers);
+    }
+
     public static int[] fillArray(int size) {
         int[] array = new int[size];
         for(int i = 0; i < array.length; i++) {
@@ -85,11 +98,15 @@ public class ArrayTheme {
     }
 
     public static void printArray(int[] array) {
-        System.out.print("[");
-        for(int number: array) {
-            System.out.print(number + ", ");
+        for(int i = 0; i < array.length; i++) {
+            if(i == 0) {
+                System.out.print("[" + array[i] + ", ");
+            }else if(i == array.length - 1) {
+                System.out.print(array[i] + "] ");
+            }else{
+                System.out.print(array[i] + ", ");
+            }
         }
-        System.out.print("] ");
     }
 
     public static void printArray(double[] array) {
@@ -117,6 +134,16 @@ public class ArrayTheme {
         }
     }
 
+    public static void mixArray(int[] array) {
+        Random rnd = new Random();
+        for(int i = 0; i < array.length; i++) {
+            int index = rnd.nextInt(i + 1);
+            int a = array[index];
+            array[index] = array[i];
+            array[i] = a;
+        }
+    }
+
     public static void main(String[] args) {
         int[] arrayNumbers = {1, 5, 3, 2, 6, 7, 4};
         reverseArray(arrayNumbers);
@@ -126,6 +153,7 @@ public class ArrayTheme {
         deleteElementsInArray();
         System.out.println();
         CharArray();
-
+        System.out.println();
+        generateRandomNumbers(60, 100);
     }
 }
