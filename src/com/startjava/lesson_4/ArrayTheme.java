@@ -1,5 +1,6 @@
 package com.startjava.lesson_4;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class ArrayTheme {
@@ -63,6 +64,45 @@ public class ArrayTheme {
         }
         mixArray(arrayRandomNumbers);
         printArray(arrayRandomNumbers);
+    }
+
+    public static void copyArray() {
+        System.out.println("6. Копирование не пустых строк");
+        int count = 0;
+        String[] firstArray = {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
+        for(String line : firstArray) {
+            int index = -1;
+            System.out.print(line + " ");
+            if (line.isEmpty()) {
+                count++;
+            }else{
+                index = line.indexOf(" ");
+                if(index > -1) {
+                    count++;
+                }
+            }
+        }
+        if(count == firstArray.length) {
+            System.out.println("Все строки пустые");
+        }else {
+            System.out.println();
+            String[] secondArray = new String[firstArray.length - count];
+            int start = 0;
+            int index;
+            int position = 0;
+            for (int i = 0; i < firstArray.length; i++) {
+                index = -1;
+                index = firstArray[i].indexOf(" ");
+                if(!firstArray[i].isEmpty() && index != 0) {
+                    secondArray[position] = firstArray[i];
+                    position++;
+                }
+            }
+            for(String line : secondArray) {
+                System.out.print(line + ",");
+            }
+        }
+
     }
 
     public static int[] fillArray(int size) {
@@ -155,5 +195,7 @@ public class ArrayTheme {
         CharArray();
         System.out.println();
         generateRandomNumbers(60, 100);
+        System.out.println();
+        copyArray();
     }
 }
