@@ -18,8 +18,7 @@ public class Calculator {
                 return Math.pow(digitA, digitB);
             case("/"):
                 return (double) digitA / digitB;
-            default:
-                return -666;
         }
+        return -1111;
     }
 }
