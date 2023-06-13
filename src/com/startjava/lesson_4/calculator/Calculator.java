@@ -3,12 +3,23 @@ package com.startjava.lesson_4.calculator;
 import java.util.Arrays;
 
 public class Calculator {
-    private String[] arrayCalculator = new String[3];
-    public void input(String console) {
-        arrayCalculator = console.split(" ");
-    }
+    public static double calculate(String[] array) {
+        int digitA = Integer.parseInt(array[0]);
+        int digitB = Integer.parseInt(array[2]);
 
-    private void calculation(String[] array) {
-
+        switch (array[1]) {
+            case("+"):
+                return digitA + digitB;
+            case("-"):
+                return digitA - digitB;
+            case("*"):
+                return digitA * digitB;
+            case("^"):
+                return Math.pow(digitA, digitB);
+            case("/"):
+                return (double) digitA / digitB;
+            default:
+                return -666;
+        }
     }
 }
