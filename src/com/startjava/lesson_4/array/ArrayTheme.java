@@ -1,6 +1,5 @@
-package com.startjava.lesson_4;
+package com.startjava.lesson_4.array;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class ArrayTheme {
