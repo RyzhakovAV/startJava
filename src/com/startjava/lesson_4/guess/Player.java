@@ -5,7 +5,7 @@ public class Player {
     private static final int sizeArray = 10;
     private int size = sizeArray;
     private int[] numbers = new int[sizeArray];
-    private int count = 0;
+    private int count = 1;
 
 
     public Player(String name) {
