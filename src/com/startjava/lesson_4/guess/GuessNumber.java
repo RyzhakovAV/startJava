@@ -23,31 +23,43 @@ public class GuessNumber {
         int random = (int)(1 + Math.random() * 2);
         if(random == 1) {
             System.out.println("Ход игрока " + firstName);
+            firstPlayer.setNamePlayer(firstName);
+            secondPlayer.setNamePlayer(secondName);
             game(AI, firstName, secondName);
         }else {
             System.out.println("Ход игрока " + secondName);
+            firstPlayer.setNamePlayer(firstName);
+            secondPlayer.setNamePlayer(secondName);
             game(AI, secondName, firstName);
         }
+
     }
 
-    private void inputArray(String name, int number) {
+    public void inputArray(String name, int number) {
         if(firstPlayer.getNamePlayer().equals(name)) {
             firstPlayer.setArrayPlayer(number);
-        }else{
+        }else {
             secondPlayer.setArrayPlayer(number);
         }
     }
 
-    public void printArray() {
-        for(int number : firstPlayer.arrayPlayer) {
-            System.out.print(number + " ");
-        }
-        for(int number : secondPlayer.arrayPlayer) {
-            System.out.print(number + " ");
+    public void printArray(String name) {
+        System.out.println("Набранный набор победителя");
+        System.out.println();
+        if (firstPlayer.getNamePlayer().equals(name)) {
+            for(int number : firstPlayer.arrayPlayer) {
+                System.out.print(number + " ");
+            }
+        } else {
+            for(int number : firstPlayer.arrayPlayer) {
+                System.out.print(number + " ");
+            }
+
         }
     }
 
     private void game(int number, String playerOne, String playerTwo) {
+
         boolean cicle = true;
         while (cicle) {
             try {
@@ -55,15 +67,15 @@ public class GuessNumber {
                 int input = console.nextInt();
                 if (number < input && input <= 100) {
                     System.out.println("Ваше число больше загаданного");
-                    //inputArray(playerOne, input);
+                    inputArray(playerOne, input);
                 } else if (number > input && input >= 1) {
                     System.out.println("Ваше число меньше загаданного");
-                    //inputArray(playerOne, input);
+                    inputArray(playerOne, input);
                 } else if (number == input) {
                     System.out.println("Вы угадали число. Это " + number);
                     System.out.println("Победил игрок " + playerOne + ". Поздравляю!");
-                    //inputArray(playerOne, input);
-                    //printArray();
+                    inputArray(playerOne, input);
+                    printArray(playerOne);
                     cicle = false;
                     break;
                 } else if (input < 1 || input > 100){
