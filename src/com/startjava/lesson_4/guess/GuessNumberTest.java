@@ -7,6 +7,7 @@ public class GuessNumberTest {
         Scanner console = new Scanner(System.in);
         String firstPlayer;
         String secondPlayer;
+        String question = "yes";
 
         System.out.println("Компьютер загадал число от 1 до 100. Вам нужно его угадать.");
         System.out.println("У каждого игрока " + size + " попыток.");
@@ -17,7 +18,12 @@ public class GuessNumberTest {
         if (firstPlayer.equals(secondPlayer)) {
             secondPlayer = secondPlayer + " 2";
         }
-        GuessNumber game = new GuessNumber(firstPlayer, secondPlayer);
+
+        while(!question.equals("no")) {
+            GuessNumber game = new GuessNumber(firstPlayer, secondPlayer);
+            System.out.println("\nИгра окончена, если хотите завершить программу наберите 'no'");
+            question = console.next();
+        }
     }
 
 }
