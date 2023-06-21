@@ -1,6 +1,6 @@
 package com.startjava.books;
 
-public class Book {
+public class Book extends Closet{
     private String autor;
     private String title;
     private int year;
@@ -15,10 +15,6 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "autor='" + autor + '\'' +
-                ", name='" + title + '\'' +
-                ", year=" + year +
-                '}';
+        return autor + ", " + title + ", " + year;
     }
 }

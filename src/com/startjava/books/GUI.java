@@ -17,16 +17,18 @@ public final class GUI {
         System.out.println("7. Очистить шкаф");
         System.out.println("8. Завершить");
     }
+
     public static int selectMenu(int point) {
+
         switch (point) {
             case 1:
                     System.out.println("Выбран пункт добавить книгу. Введите автора книги");
                     System.out.println("1. Назад");
-                    String autor = input.next();
+                    String autor = input.nextLine();
                     if (autor.equals("1")) return 0;
                     else if (autor.isEmpty()) autor = "unknow";
                     System.out.println("Введите название книги");
-                    String title = input.next();
+                    String title = input.nextLine();
                     if(title.isEmpty()) title = "unknow";
                     System.out.println("Введите год");
                     int year = input.nextInt();
@@ -34,7 +36,7 @@ public final class GUI {
                     System.out.println("2. Отмена");
                     int save = input.nextInt();
                     if (save == 1) {
-                        return 1;
+                        Main.closet1.add(new Book(autor, title, year));
                     }else if(save ==2){
                         return 0;
                     }else{

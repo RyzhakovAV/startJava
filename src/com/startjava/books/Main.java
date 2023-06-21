@@ -5,9 +5,11 @@ import java.util.Scanner;
 
 import static com.startjava.books.GUI.*;
 public class Main {
+    static Closet closet1 = new Closet();
     public static void main(String[] args) {
         boolean menu = true;
         Scanner console = new Scanner(System.in);
+
 
         while (menu) {
             printMenu();
@@ -19,10 +21,15 @@ public class Main {
                     System.out.println("Ошибка ввода, попробуйте еще раз");
                 }else if(choisePoint == 8) {
                     menu = false;
-                }else if(choisePoint == 0) continue;
+                }
             } catch(Exception e) {
                 System.out.println("Ошибка ввода, попробуйте еще раз");
             }
+        }
+
+        for (Book book : closet1.arrayCloset) {
+            System.out.println(book);
+
         }
     }
 }
