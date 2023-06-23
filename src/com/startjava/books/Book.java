@@ -1,6 +1,7 @@
 package com.startjava.books;
 
 public class Book extends Closet{
+
     private String autor;
     private String title;
     private int year;
@@ -11,6 +12,14 @@ public class Book extends Closet{
         this.title = title;
         this.year = year;
         this.length = autor.length() + title.length() + Integer.toString(year).length();
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     @Override

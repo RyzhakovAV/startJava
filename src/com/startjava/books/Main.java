@@ -17,19 +17,14 @@ public class Main {
             String choice = console.next();
             try {
                 int choisePoint = selectMenu(Integer.parseInt(choice));
-                if(choisePoint == -1) {
+                if (choisePoint == -1) {
                     System.out.println("Ошибка ввода, попробуйте еще раз");
-                }else if(choisePoint == 8) {
+                } else if (choisePoint == 8) {
                     menu = false;
                 }
-            } catch(Exception e) {
+            } catch (NumberFormatException e) {
                 System.out.println("Ошибка ввода, попробуйте еще раз");
             }
-        }
-
-        for (Book book : closet1.arrayCloset) {
-            System.out.println(book);
-
         }
     }
 }
