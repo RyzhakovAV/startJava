@@ -12,6 +12,24 @@ public class Closet {
         }
     }
 
+    public void delete(String findBook) {
+        int index = -1;
+        for(int i = 0; i < countBooks; i++) {
+            Book book = (Book) arrayCloset[i];
+            if(book.getTitle().equals(findBook)) {
+                index = i;
+            }
+        }
+        if(index == -1) {
+            System.out.println("Книга не найдена");
+        }else if (index < countBooks && index != -1) {
+            for(int i = index; i < countBooks; i++) {
+                arrayCloset[i] = arrayCloset[i+1];
+            }
+        }
+        countBooks--;
+    }
+
     public void fillArray() {
         countBooks = 0;
     }

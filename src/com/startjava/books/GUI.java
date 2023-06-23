@@ -55,21 +55,18 @@ public final class GUI {
     }
 
     public static void findBook(Closet[] array, int number, String Bookname) {
+        int index = -1;
         for(int i = 0; i < number; i++) {
             Book book = (Book)array[i];
             if(Bookname.equals(book.getTitle())) {
                 System.out.println("Книга найдена:");
+                index = i;
                 System.out.println(book);
-            }else {
-                if (i == number - 1) {
-                    System.out.println("Книга не найдена");
-                }
             }
         }
-    }
-
-    public static void deleteBook(Closet[] array, int number, String Bookname) {
-
+        if (index == -1) {
+            System.out.println("Книга не найдена");
+        }
     }
 
     public static int selectMenu(int point) {
@@ -91,6 +88,7 @@ public final class GUI {
                 int save = input.nextInt();
                 if (save == 1) {
                     Main.closet1.add(new Book(autor, title, year));
+                    System.out.println("Книга добавлена");
                     printCloset(Main.closet1.arrayCloset, Closet.getCountBooks());
                 }else if(save ==2){
                     return 0;
@@ -98,12 +96,16 @@ public final class GUI {
                     System.out.println("Ошибка ввода");
                     return 0;
                 }
+                return 1;
             case 2:
                 System.out.println("Введите назване книги");
                 String findTitle = input.nextLine();
                 findBook(Main.closet1.arrayCloset, Closet.getCountBooks(), findTitle);
                 return 2;
             case 3:
+                System.out.println("Введите назване книги");
+                String deleteTitle = input.nextLine();
+                Main.closet1.delete(deleteTitle);
                 printCloset(Main.closet1.arrayCloset, Closet.getCountBooks());
                 return 3;
             case 4:
