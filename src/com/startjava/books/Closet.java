@@ -9,6 +9,9 @@ public class Closet {
         if(countBooks < sizeCloset) {
             arrayCloset[countBooks] = book;
             countBooks++;
+            System.out.println("Книга добавлена");
+        }else if(countBooks == sizeCloset) {
+            System.out.println("Шкаф переполнен, дополнение книги не возможно");
         }
     }
 
@@ -18,16 +21,18 @@ public class Closet {
             Book book = (Book) arrayCloset[i];
             if(book.getTitle().equals(findBook)) {
                 index = i;
+                System.out.println(index);
             }
         }
         if(index == -1) {
             System.out.println("Книга не найдена");
         }else if (index < countBooks && index != -1) {
-            for(int i = index; i < countBooks; i++) {
+            for(int i = index; i < countBooks - 1; i++) {
                 arrayCloset[i] = arrayCloset[i+1];
             }
+            countBooks--;
         }
-        countBooks--;
+
     }
 
     public void fillArray() {

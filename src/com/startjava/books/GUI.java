@@ -19,12 +19,6 @@ public final class GUI {
         System.out.println("8. Завершить");
     }
 
-    public static void printBooks(Closet[] array, int number) {
-        for(int i = 0; i < number; i++) {
-            System.out.println(array[i]);
-        }
-    }
-
     public static void line(int number) {
         for (int i = 0; i <= number + 5; i++) {
             System.out.print("-");
@@ -88,7 +82,6 @@ public final class GUI {
                 int save = input.nextInt();
                 if (save == 1) {
                     Main.closet1.add(new Book(autor, title, year));
-                    System.out.println("Книга добавлена");
                     printCloset(Main.closet1.arrayCloset, Closet.getCountBooks());
                 }else if(save ==2){
                     return 0;
@@ -109,7 +102,7 @@ public final class GUI {
                 printCloset(Main.closet1.arrayCloset, Closet.getCountBooks());
                 return 3;
             case 4:
-                printBooks(Main.closet1.arrayCloset, Closet.getCountBooks());
+                printCloset(Main.closet1.arrayCloset, Closet.getCountBooks());
                 return 4;
             case 5:
                 System.out.printf("Количество книг в шкафу: %d\n", Closet.getCountBooks());

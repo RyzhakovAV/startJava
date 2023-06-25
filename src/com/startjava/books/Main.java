@@ -10,7 +10,7 @@ public class Main {
         boolean menu = true;
         Scanner console = new Scanner(System.in);
 
-
+        System.out.println("Шкаф пуст вы можете в него добавить первую книну");
         while (menu) {
             printMenu();
             System.out.println("Выберите пункт и подвердите нажатием Enter");
